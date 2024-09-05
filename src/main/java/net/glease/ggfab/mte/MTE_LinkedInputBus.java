@@ -114,7 +114,7 @@ public class MTE_LinkedInputBus extends GT_MetaTileEntity_Hatch_InputBus {
     public ItemStack getStackInSlot(int aIndex) {
         if (aIndex == getCircuitSlot()) return super.getStackInSlot(aIndex);
         if (mState != State.Blocked && mChannel != null && mRealInventory != null) {
-            if (aIndex > 0 && aIndex <= SIZE_INVENTORY) return mRealInventory.stacks[aIndex - 1];
+            if (aIndex >= 0 && aIndex < SIZE_INVENTORY) return mRealInventory.stacks[aIndex];
         }
         return null;
     }
